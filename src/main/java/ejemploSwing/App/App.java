@@ -30,8 +30,8 @@ public class App extends JFrame implements ActionListener{
 	
 	
 	JButton audio1 = new JButton("Clau");
-	JButton audio2 = new JButton("Me hice caca");
-	JButton audio3 = new JButton("Risa Braca");
+	JButton audio2 = new JButton("Me sale caca");
+	JButton audio3 = new JButton("Pedito");
 	JButton audio4 = new JButton("ISABELAA");
 	
 	private void App() {
@@ -78,7 +78,6 @@ public class App extends JFrame implements ActionListener{
 			try {
 				fileInputStream = new FileInputStream("D:\\ArchivosDePrograma\\eclipse\\eclips-workspace\\CTM\\src\\main\\java\\res\\clau.mp3");
 			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
             bufferedInputStream = new BufferedInputStream(fileInputStream);
@@ -94,10 +93,42 @@ public class App extends JFrame implements ActionListener{
 			}
 		}
 		if(e.getSource() == audio2) {
-			System.out.println("Soy a2");
+			System.out.println("Me sale caca");
+			try {
+				fileInputStream = new FileInputStream("D:\\ArchivosDePrograma\\eclipse\\eclips-workspace\\CTM\\src\\main\\java\\res\\Me sale caca.mp3");
+			} catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
+            bufferedInputStream = new BufferedInputStream(fileInputStream);
+            try {
+				player=new Player(bufferedInputStream);
+			} catch (JavaLayerException e1) {
+				e1.printStackTrace();
+			}
+            try {
+				player.play();
+			} catch (JavaLayerException e1) {
+				e1.printStackTrace();
+			}
 		}
 		if(e.getSource() == audio3) {
-			System.out.println("Soy no me acue");
+			System.out.println("Pedito");
+			try {
+				fileInputStream = new FileInputStream("D:\\ArchivosDePrograma\\eclipse\\eclips-workspace\\CTM\\src\\main\\java\\res\\Pedito.mp3");
+			} catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
+            bufferedInputStream = new BufferedInputStream(fileInputStream);
+            try {
+				player=new Player(bufferedInputStream);
+			} catch (JavaLayerException e1) {
+				e1.printStackTrace();
+			}
+            try {
+				player.play();
+			} catch (JavaLayerException e1) {
+				e1.printStackTrace();
+			}
 		}
 		if(e.getSource() == audio4) {
 			System.out.println("Soy ISABELAA");
