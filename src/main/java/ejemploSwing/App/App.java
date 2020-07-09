@@ -1,8 +1,12 @@
 package ejemploSwing.App;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.GraphicsEnvironment;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.ImageObserver;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,11 +32,19 @@ public class App extends JFrame implements ActionListener{
 	BufferedInputStream bufferedInputStream;
 	Player player;
 	
+	/*  Hilos  */
+	Thread reproducirThread;
+	Thread sinNombre;
+	
 	
 	JButton audio1 = new JButton("Clau");
 	JButton audio2 = new JButton("Me sale caca");
 	JButton audio3 = new JButton("Pedito");
 	JButton audio4 = new JButton("ISABELAA");
+	
+	/*  Punto en el centro de la pantalla  */
+	Point centro  = GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
+	
 	
 	private void App() {
 	}
@@ -59,10 +71,12 @@ public class App extends JFrame implements ActionListener{
 		app.setTitle("Audios");
 		app.getContentPane().setLayout(null);
 		app.getContentPane().setBackground(Color.pink);
-		
+		app.setSize(720, 500);
+		/*  Pongo la app en el medio de la pantalla  */
+		app.setLocation(app.centro.x - (int)app.getSize().getWidth()/2, app.centro.y - (int)app.getSize().getHeight()/2);
 		app.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
-		app.setSize(720, 500);
+	
 		app.setVisible(true);
 		
 		
